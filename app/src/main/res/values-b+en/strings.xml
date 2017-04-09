@@ -3,10 +3,19 @@
     <string name="addCourse">add a run</string>
     <string name="showCourse">Show my runs</string>
     <string name="GMaps">run locations</string>
+<<<<<<< HEAD
+    <string name="gotomaps">Check Map</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="location">Localisation</string>
+    <string name="distance">Distance</string>
+    <string name="time">Time</string>
+=======
     <string name="dist">Distance</string>
     <string name="title_activity_maps">Map</string>
     <string name="time">Time</string>
     <string name="longitude">Longitude</string>
     <string name="latitude">Latitude</string>
     <string name="map">Localisation</string>
+>>>>>>> 53ba26375dadb9ad5c7bdcd162dd33a1e733805c
 </resources>
