@@ -12,7 +12,7 @@ import android.view.ViewGroup;
  * Created by alex on 06/04/2017.
  */
 
-public class FormFragment extends Fragment{
+public class FormFragment extends Fragment {
     public FormFragment(){}
 
 

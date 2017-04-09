@@ -5,6 +5,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.graphics.drawable.VectorDrawable;
+
+import java.util.Vector;
+
 /**
  * Created by alex on 09/04/2017.
  */
@@ -23,9 +27,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_LATITUDE = "latitude";
 
 
-    public DataBaseHelper(Context context, String name,
-                       SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, DATABASE_NAME, factory, DATABASE_VERSION);
+    public DataBaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
@@ -88,6 +91,29 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         db.close();
         return course;
+    }
+    public Vector<Course> getCourses()
+    {
+        Vector<Course> Courses=new Vector<Course>();
+        String query="Select * FROM " + TABLE_COURSE;
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+        Course course;
+        if(cursor.moveToFirst()) {
+            do{
+                course=new Course(
+                        Integer.parseInt(cursor.getString(0)),
+                        Integer.parseInt(cursor.getString(1)),
+                        Double.parseDouble(cursor.getString(2)),
+                        cursor.getString(3),
+                        Integer.parseInt(cursor.getString(4)),
+                        Integer.parseInt(cursor.getString(5)));
+                Courses.add(course);
+
+            }while(cursor.moveToNext());
+        }
+
+        return Courses;
     }
     public boolean deleteCourse(int id) {
 

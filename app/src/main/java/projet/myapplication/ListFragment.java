@@ -1,12 +1,18 @@
 package projet.myapplication;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+
+import java.util.Vector;
 
 /**
  * Created by alex on 06/04/2017.
@@ -16,10 +22,7 @@ public class ListFragment extends Fragment{
     public ListFragment(){}
 
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private String mParam1;
-    private String mParam2;
+    TableLayout Table;
 
 
 
@@ -27,33 +30,36 @@ public class ListFragment extends Fragment{
 
 
 
-    public static ListFragment newInstance(String param1, String param2) {
+    public static ListFragment newInstance() {
         ListFragment fragment = new ListFragment();
-
-
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.list_Fragment, container,
+        View view = inflater.inflate(R.layout.list_fragment, container,
                 false);
+        Course course;
+        Vector<Course> courses;
+        Context context=getActivity();
+        DataBaseHelper help=new DataBaseHelper(context);
+        courses=help.getCourses();
+        TextView text;
+        TableRow row;
+        TableLayout tl = (TableLayout)view.findViewById(R.id.table);
 
+        for(int i=0;i<courses.size();i++)
+        {
+            row=new TableRow(getActivity());
+            text=new TextView(getActivity());
+            text.setText(courses.get(i).getdist());
+        }
 
         return view;
     }
