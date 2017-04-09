@@ -4,4 +4,10 @@
     <string name="showCourse">Voir mes courses</string>
     <string name="GMaps">Lieu courses</string>
     <string name="title_activity_maps">Map</string>
+    <string name="gotomaps">Voir carte</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="location">Localisation</string>
+    <string name="distance">Distance</string>
+    <string name="time">Heure</string>
 </resources>

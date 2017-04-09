@@ -3,4 +3,10 @@
     <string name="addCourse">add a run</string>
     <string name="showCourse">Show my runs</string>
     <string name="GMaps">run locations</string>
+    <string name="gotomaps">Check Map</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="location">Localisation</string>
+    <string name="distance">Distance</string>
+    <string name="time">Time</string>
 </resources>
