@@ -60,18 +60,8 @@ public class MainActivity extends AppCompatActivity implements
                 fgt.replace(R.id.myFrame, List).commit();
             }
         });
-        GMapsbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                FragmentTransaction fgt;
-                GMapsFragment GMaps=GMapsFragment.newInstance();
-                fgt = getSupportFragmentManager().beginTransaction();
-                fgt.addToBackStack("new fragment");
-                fgt.replace(R.id.myFrame, GMaps).commit();
 
-            }
-        });
 
 
 
@@ -85,4 +75,11 @@ public class MainActivity extends AppCompatActivity implements
         System.out.println((String) ref);
         Toast.makeText(this, (String) ref, Toast.LENGTH_SHORT).show();
     }
+    public void gotomaps(Course course) {
+
+        FragmentTransaction fgt;
+        GMapsFragment GMaps=GMapsFragment.newInstance(course);
+        fgt = getSupportFragmentManager().beginTransaction();
+        fgt.addToBackStack("new fragment");
+        fgt.replace(R.id.myFrame, GMaps).commit();}
 }

@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -23,7 +24,8 @@ public class ListFragment extends Fragment{
 
 
     TableLayout Table;
-
+    Vector<Course> courses;
+    int i;
 
 
     private OnFragmentInteractionListener mListener;
@@ -46,19 +48,35 @@ public class ListFragment extends Fragment{
         View view = inflater.inflate(R.layout.list_fragment, container,
                 false);
         Course course;
-        Vector<Course> courses;
         Context context=getActivity();
         DataBaseHelper help=new DataBaseHelper(context);
         courses=help.getCourses();
         TextView text;
         TableRow row;
+        String tmp;
         TableLayout tl = (TableLayout)view.findViewById(R.id.table);
+        Button btn;
 
-        for(int i=0;i<courses.size();i++)
+        for(i=0;i<courses.size();i++)
         {
             row=new TableRow(getActivity());
             text=new TextView(getActivity());
             text.setText(courses.get(i).getdist());
+            row.addView(text);
+            tmp=Double.toString(courses.get(i).getTime());
+            text.setText(tmp);
+            row.addView(text);
+            text.setText(courses.get(i).getLocation());
+            row.addView(text);
+            btn=new Button(getActivity());
+            btn.setId(i);
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ((MainActivity)getActivity()).gotomaps(courses.get(i));
+                };});
+            row.addView(btn);
+            tl.addView(row,i);
         }
 
         return view;

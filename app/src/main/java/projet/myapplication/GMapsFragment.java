@@ -49,13 +49,13 @@ public class GMapsFragment extends Fragment implements OnMapReadyCallback, Locat
 
 
 
-    public static GMapsFragment newInstance(int param1, int param2) {
+    public static GMapsFragment newInstance(Course course) {
         GMapsFragment fragment = new GMapsFragment();
 
 
         Bundle args = new Bundle();
-        args.putInt(ARG_PARAM1, param1);
-        args.putInt(ARG_PARAM2, param2);
+        args.putInt(ARG_PARAM1, course.getLatitude());
+        args.putInt(ARG_PARAM2, course.getLongitude());
 
         fragment.setArguments(args);
         return fragment;
