@@ -10,23 +10,42 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="projet.myapplication.MainActivity">
 
-    <menu
+
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <item
-            android:id="@+id/addCourse"
-            android:title="@string/addCourse"
-            android:showAsAction="ifRoom"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu"
+        android:weightSum="4">
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/Addbtn"
+            android:text="@string/addCourse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <item
-            android:id="@+id/showCourse"
-            android:title="@string/showCourse"
-            android:showAsAction="ifRoom"
+        <Button
+            android:layout_weight="2"
+            android:id="@+id/showbtn"
+            android:text="@string/showCourse"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/GMapsbtn"
+            android:text="@string/GMaps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
+    </LinearLayout>
 
-    </menu>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/myFrame"
+        android:layout_below="@+id/menu"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
