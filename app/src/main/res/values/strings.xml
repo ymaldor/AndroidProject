@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Mon Application</string>
+    <string name="addCourse">Ajouter une course</string>
+    <string name="showCourse">Voir mes courses</string>
 </resources>
