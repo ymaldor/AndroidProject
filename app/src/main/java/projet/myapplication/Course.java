@@ -13,6 +13,8 @@ public class Course {
     private int longitude;
     private double time;
 
+
+    //Set-all
     public Course(int id,int distance, double time, String location, int longitude, int latitude)
     {
         this.id=id;

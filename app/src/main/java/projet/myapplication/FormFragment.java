@@ -27,25 +27,16 @@ public class FormFragment extends Fragment{
 
 
 
-    public static FormFragment newInstance(String param1, String param2) {
+    public static FormFragment newInstance() {
         FormFragment fragment = new FormFragment();
 
 
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -95,7 +86,7 @@ public class FormFragment extends Fragment{
      * activity.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+        //TODO: Update argument type and name
         void onFragmentInteraction(Object ref);
     }
 }
