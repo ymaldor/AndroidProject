@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements
         //définition des onClicklistener de tous les boutons menus
         addbtn=(Button) findViewById(R.id.Addbtn);
         showbtn=(Button) findViewById(R.id.showbtn);
-        GMapsbtn=(Button) findViewById(R.id.GMapsbtn);
 
         addbtn.setOnClickListener(new View.OnClickListener() {
           @Override

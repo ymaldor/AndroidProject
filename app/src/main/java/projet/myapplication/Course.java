@@ -15,9 +15,8 @@ public class Course {
 
 
     //Set-all
-    public Course(int id,int distance, double time, String location, int longitude, int latitude)
+    public Course(int distance, double time, String location, int longitude, int latitude)
     {
-        this.id=id;
         this.distance=distance;
         this.location=location;
         this.latitude=latitude;
