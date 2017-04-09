@@ -3,4 +3,5 @@
     <string name="addCourse">Ajouter une course</string>
     <string name="showCourse">Voir mes courses</string>
     <string name="GMaps">Lieu courses</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
