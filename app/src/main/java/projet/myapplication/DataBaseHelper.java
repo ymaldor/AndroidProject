@@ -36,7 +36,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         String CREATE_PRODUCTS_TABLE = "CREATE TABLE " +
                 TABLE_COURSE + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY," + COLUMN_DIST
-                + " INTEGER," + COLUMN_TEMPS + " TIME," + COLUMN_LOCATION + " TEXT,"
+                + " INTEGER," + COLUMN_TEMPS + " REAL," + COLUMN_LOCATION + " TEXT,"
                 + COLUMN_LONGITUDE + " INTEGER," + COLUMN_LATITUDE + " INTEGER)";
         db.execSQL(CREATE_PRODUCTS_TABLE);
     }
