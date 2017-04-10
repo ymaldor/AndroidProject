@@ -79,7 +79,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             cursor.moveToFirst();
-            course=new Course(Integer.parseInt(cursor.getString(0)),
+            course=new Course(
                                 Integer.parseInt(cursor.getString(1)),
                                 Double.parseDouble(cursor.getString(2)),
                                 cursor.getString(3),
@@ -102,7 +102,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         if(cursor.moveToFirst()) {
             do{
                 course=new Course(
-                        Integer.parseInt(cursor.getString(0)),
+
                         Integer.parseInt(cursor.getString(1)),
                         Double.parseDouble(cursor.getString(2)),
                         cursor.getString(3),
